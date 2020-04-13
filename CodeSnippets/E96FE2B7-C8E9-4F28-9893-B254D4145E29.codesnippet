@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setupUICollectionView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> -(UICollectionView *)collectionView{
+     if (!_collectionView) {
+         UICollectionViewFlowLayout *flowlayout = [[UICollectionViewFlowLayout alloc] init];
+         _collectionView  = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowlayout];
+         _collectionView.backgroundColor = [UIColor colorWithRed:235 green:235 blue:241 alpha:1];
+         _collectionView.delegate = self;
+         _collectionView.dataSource = self;
+        
+         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
+
+         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
+
+         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];
+
+     }
+     return _collectionView;
+ }
+
+#pragma mark --UICollectionViewDataSource UICollectionViewDelegate
+//section 的个数
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+//cell的个数
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    return self.rechargeArr.count;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    RechargeBtnCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RechargeBtnCell" forIndexPath:indexPath];
+   
+    return cell;
+    
+}
+
+//设置每个 Item 的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(K_WIDTH/2-100, 70);
+}
+//设置置collectionView的四周边距
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+   return UIEdgeInsetsMake(10, 20, 10, 20);
+}
+//设置最小行间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    return 15;
+}
+//设置最小列间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    return 20;
+}
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    RechargeBtnCell *cell = (RechargeBtnCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    [_delegate didSelectItemWith:indexPath.row];
+    
+
+    
+}
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    RechargeBtnCell *cell = (RechargeBtnCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    [_delegate didDeselectItemWith:indexPath.row];
+}
+
+//设置段尾的尺寸
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(K_WIDTH, 30);
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    return CGSizeMake(K_WIDTH, 70);
+}
+
+
+//返回头视图或尾部视图（头视图或尾部视图不设置大小的话，该代理方法不会走）
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *reuseablebiew = nil;
+    if ([kind isEqualToString:@"UICollectionElementKindSectionHeader"]) {//这是头视图
+        RechargeReusableView *headeview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"RechargeReusableView" forIndexPath:indexPath];
+        headeview.titleLabText = @"选择充值额度";
+        reuseablebiew = headeview;
+    }else{//这是尾视图
+        RechargeFooterReusableView *footview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"RechargeFooterReusableView" forIndexPath:indexPath];
+        footview.confirmBlock = ^{
+            NSLog(@"点击");
+            if (self.RechargeBlock) {
+                self.RechargeBlock(0);
+            }
+        };
+      reuseablebiew = footview;
+    }
+
+    return reuseablebiew;
+
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E96FE2B7-C8E9-4F28-9893-B254D4145E29</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>setupUICollectionView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建UICollectionViewy以及代理</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

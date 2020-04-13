@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>MARK:</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//MARK:-- Life Cycle
+//MARK:-- Events Response（点击事件）
+//MARK:-- Private Methods（私有方法）
+//MARK:-- System Delegate（系统Delegate）
+//(UITextFieldDelegate\UITableViewDataSource\UITableViewDelegate等)
+//MARK:-- Custom Delegates（自定义Delegate）
+//MARK:-- – Getters and Setters （初始化）</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>84834902-4EDC-445F-80FE-438E9F744DD2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>#代码结构的规定(Swift)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

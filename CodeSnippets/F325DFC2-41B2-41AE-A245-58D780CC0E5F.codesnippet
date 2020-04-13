@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>LazyUITextField</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(UITextField *)questionTF{
+    if (!_questionTF) {
+        _questionTF = [[UITextField alloc] init];
+        _questionTF.font = [UIFont boldSystemFontOfSize:18];
+        _questionTF.textColor = [UIColor grayColor];
+        _questionTF.textAlignment = NSTextAlignmentCenter;
+        _questionTF.placeholder = @"喜欢什么颜色?";
+        _questionTF.borderStyle = UITextBorderStyleLine;
+        _questionTF.clearsOnBeginEditing = YES;
+        _questionTF.clearButtonMode = UITextFieldViewModeWhileEditing;
+        
+    }
+    return _questionTF;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F325DFC2-41B2-41AE-A245-58D780CC0E5F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>懒加载UITextField</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

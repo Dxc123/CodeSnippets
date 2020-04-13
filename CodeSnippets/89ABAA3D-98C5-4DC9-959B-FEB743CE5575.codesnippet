@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setupUICollectionViewDelegate(swift)</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension CJKTSecondViewController:UICollectionViewDelegateFlowLayout, UICollectionViewDelegate ,UICollectionViewDataSource  {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
+        return 6;
+       }
+       
+       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CJKTSecondCollectionCell", for: indexPath) as!CJKTSecondCollectionCell
+        
+//        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: CJKTSecondCollectionCell.self)
+        cell.backgroundColor = UIColor.red
+        
+        return cell
+       }
+    
+    
+    // return: item的大小
+       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -&gt; CGSize
+       {
+          
+         return CGSize(width: (SCREEN_WIDTH - 20)/2, height: 80)
+           
+       }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -&gt; UIEdgeInsets{
+        return UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5)
+    }
+
+   //最小行间距
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -&gt; CGFloat{
+        return 10
+    }
+
+    //最小列间距
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -&gt; CGFloat{
+        return 10
+    }
+    
+    
+    
+      //返回header的大小
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -&gt; CGSize
+        {
+            return CGSize(width: SCREEN_WIDTH, height: 50)
+            }
+    //    返回Footer的大小
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -&gt; CGSize {
+             return CGSize(width: SCREEN_WIDTH, height: 50)
+        }
+
+        func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -&gt; UICollectionReusableView
+        {
+           
+            
+            if (kind as String) == UICollectionView.elementKindSectionHeader  {
+                //返回头部
+//                let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath)
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, for: indexPath, viewType: CJKTSecondCollectionReusableView.self)
+                header.backgroundColor = UIColor.yellow
+                return header
+            }else
+            {
+                //返回底部
+//                let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer", for: indexPath)
+                let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, for: indexPath, viewType: CJKTSecondCollectionReusableView.self)
+                footer.backgroundColor = UIColor.blue
+                return footer
+            }
+        }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>89ABAA3D-98C5-4DC9-959B-FEB743CE5575</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>创建UICollectionView代理</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建UICollectionView代理</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
