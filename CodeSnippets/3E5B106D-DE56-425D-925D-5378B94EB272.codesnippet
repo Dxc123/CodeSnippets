@@ -3,21 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>@Copy</string>
+	<string>LazyUITextView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, copy) NSString *&lt;#string#&gt;;</string>
+	<string>lazy var contentTextView: UITextView = {
+        let cw = UITextView()
+        cw.isUserInteractionEnabled = false
+        cw.font = UIFont.systemFont(ofSize: 13)
+        cw.textColor = UIColor.black
+        return cw
+    }()
+    </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AE85719E-344F-4A31-A4C3-A40F3AFD9E1E</string>
+	<string>3E5B106D-DE56-425D-925D-5378B94EB272</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>属性Copy</string>
+	<string>Swift-LazyUITextView</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -9,15 +9,17 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>private lazy var searchButon: UIButton = {
-        let sn = UIButton(type: .system)
-        sn.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: 30)
-        sn.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-        sn.layer.cornerRadius = 15
-        sn.setTitleColor(.white, for: .normal)
-        sn.setImage(UIImage(named: "nav_search")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        sn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
-        sn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
+	<string>private lazy var clickedButon: UIButton = {
+        let sn = UIButton(type: .custom)
+        sn.frame = CGRect.zero
+        sn.backgroundColor = UIColor.clear.withAlphaComponent(1)
+        sn.setTitle("妹子", for: .normal)
+        sn.setTitleColor(.gray, for: .normal)
+        sn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+//        sn.setImage(UIImage(named: "nav_search")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        sn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
+//        sn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
+//         sn.layer.cornerRadius = 15
         sn.addTarget(self, action:#selector(searchAction), for: .touchUpInside)
         return sn
     }()</string>
@@ -28,10 +30,10 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>懒加载UIButton(Swift)</string>
+	<string>Swift-lazyUIButton</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

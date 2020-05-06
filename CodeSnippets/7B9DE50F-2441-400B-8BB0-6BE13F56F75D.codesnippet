@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>instance</string>
+	<string>GCDonceToken</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>+ (instancetype)sharedInstance {
-    static &lt;#Class#&gt; *_sharedInstance = nil;
+    static Class *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&amp;onceToken, ^{
-        _sharedInstance = [[self alloc] init];
+        _sharedInstance = [[Class alloc] init];
         
     });
     return _sharedInstance;
@@ -25,7 +25,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>单例instance</string>
+	<string>GCD:dispatch_once</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

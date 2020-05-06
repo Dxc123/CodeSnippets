@@ -36,9 +36,18 @@
     return 40;
 }
 
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return UITableViewAutomaticDimension;
+//}
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 100;
+//}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-}</string>
+}
+
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>C5D25D7E-1CDE-475B-98B4-5BEFE551B31F</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -3,21 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>@Copy</string>
+	<string>lazyUIImageView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, copy) NSString *&lt;#string#&gt;;</string>
+	<string>lazy var iconImgV: UIImageView = {
+        let img = UIImageView.init()
+        img.contentMode = .scaleAspectFit
+        return img
+    }()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AE85719E-344F-4A31-A4C3-A40F3AFD9E1E</string>
+	<string>615DFCF4-25E1-4237-8DA4-75BD5B973731</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
-	<string></string>
+	<string>lazyUIImageView</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>属性Copy</string>
+	<string>Swift-lazyUIImageView</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

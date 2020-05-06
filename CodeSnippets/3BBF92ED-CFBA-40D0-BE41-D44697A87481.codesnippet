@@ -9,16 +9,16 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UILabel *)label{
-    if (!_label) {
-        _label = [[UILabel alloc] init];
-        _label.textAlignment = NSTextAlignmentCenter;
-        _label.font = [UIFont &lt;#font#&gt;];
-        _label.text = @"&lt;#conent#&gt;";
-        _label.textColor = [UIColor &lt;#textColor#&gt;];
-        _label.numberOfLines = 0;
+	<string>- (UILabel *)studentLab{
+    if (!_studentLab) {
+        _studentLab = [[UILabel alloc] init];
+        _studentLab.textAlignment = NSTextAlignmentCenter;
+        _studentLab.font = [UIFont boldSystemFontOfSize:16];
+        _studentLab.text = @"学生";
+        _studentLab.textColor = [UIColor blackColor];
+        _studentLab.numberOfLines = 0;
     }
-    return _label;
+    return _studentLab;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3BBF92ED-CFBA-40D0-BE41-D44697A87481</string>

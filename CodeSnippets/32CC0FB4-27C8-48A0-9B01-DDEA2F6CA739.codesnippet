@@ -14,7 +14,6 @@
         button.titleLabel.font = [UIFont &lt;#font#&gt;];
         [button setTitle:&lt;#title#&gt; forState:UIControlStateNormal];
         [button setTitleColor:[UIColor &lt;#titleColor#&gt;] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:&lt;#(nonnull NSString *)#&gt;] forState:UIControlStateNormal]
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [&lt;#view#&gt; addSubview:button];</string>
 	<key>IDECodeSnippetIdentifier</key>

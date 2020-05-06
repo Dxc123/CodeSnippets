@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>GCDTimer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> /** 获取一个全局的线程来运行计时器*/
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    /** 创建一个计时器*/
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    /** 设置计时器, 这里是每10毫秒执行一次*/
+    dispatch_source_set_timer(timer, dispatch_walltime(nil, 0), 10*NSEC_PER_MSEC, 0);
+    /** 设置计时器的里操作事件*/
+    dispatch_source_set_event_handler(timer, ^{
+        //do you want....
+    });
+   /**开启、继续已暂停的定时器**/
+    dispatch_resume(timer);
+    
+    /**结束定时器**/
+    dispatch_source_cancel(timer);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E6DD3E1B-2264-4AA6-8510-7A90AD6098D9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD:Timer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -3,21 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>@Copy</string>
+	<string>initWithFrame</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, copy) NSString *&lt;#string#&gt;;</string>
+	<string>-(instancetype)initWithFrame:(CGRect)frame
+{
+    self= [super initWithFrame:frame];
+    if (self) {
+        [self setupUI];
+        
+    }
+    return self;
+}
+-(void)setupUI{
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AE85719E-344F-4A31-A4C3-A40F3AFD9E1E</string>
+	<string>D20981A6-853C-461A-92A2-88008B634F2E</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
-	<string></string>
+	<string>setupUIView</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>属性Copy</string>
+	<string>创建UIView</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -9,13 +9,13 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string> UILabel *&lt;#label#&gt; = [[UILabel alloc] init];
-        &lt;#label#&gt;.textAlignment = NSTextAlignmentCenter;
-        &lt;#label#&gt;.font = [UIFont &lt;#font#&gt;];
-        &lt;#label#&gt;.text = @"&lt;#conent#&gt;";
-        &lt;#label#&gt;.textColor = [UIColor &lt;#textColor#&gt;];
-        &lt;#label#&gt;.numberOfLines = 0;
-        [&lt;#view#&gt; addSubview:&lt;#label#&gt;];</string>
+	<string> UILabel *label = [[UILabel alloc] init];
+label.textAlignment = NSTextAlignmentCenter;
+label.font = [UIFont &lt;#font#&gt;];
+label.text = @"";
+label.textColor = [UIColor &lt;#textColor#&gt;];
+label.numberOfLines = 0;
+[self.view addSubview:label];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>BF3BEA57-8327-46D4-9FC9-51A60EE5FF8D</string>
 	<key>IDECodeSnippetLanguage</key>

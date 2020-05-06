@@ -3,21 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>@Copy</string>
+	<string>LazyUILabel</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, copy) NSString *&lt;#string#&gt;;</string>
+	<string>lazy var nickNameLabel: UILabel = {
+    let nl = UILabel.init()
+    nl.textColor = UIColor.gray
+    nl.font = UIFont.systemFont(ofSize: 13)
+    nl.textAlignment = .center;
+    return nl
+    }()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AE85719E-344F-4A31-A4C3-A40F3AFD9E1E</string>
+	<string>49FA6C09-D2B2-4370-B461-3EBAAD5E65C6</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>属性Copy</string>
+	<string>Swift-LazyUILabel</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

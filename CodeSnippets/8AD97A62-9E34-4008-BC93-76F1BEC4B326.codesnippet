@@ -12,6 +12,7 @@
 	<string>
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .horizontal////横向滚动
         let cw = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
         cw.backgroundColor = UIColor.white
         cw.delegate = self
@@ -23,6 +24,11 @@
         cw.register(cellType: CJKTSecondCollectionCell.self)
         cw.register(supplementaryViewType: CJKTSecondCollectionReusableView.self, ofKind: UICollectionView.elementKindSectionHeader)
         cw.register(supplementaryViewType: CJKTSecondCollectionReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
+        if #available(iOS 11.0, *) {
+            cw.contentInsetAdjustmentBehavior = .never
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
         return cw
         
     }()</string>
@@ -35,10 +41,10 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>lazyUICollectionView</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>懒加载UICollectionView(Swift)</string>
+	<string>Swift-layzUICollectionView</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
