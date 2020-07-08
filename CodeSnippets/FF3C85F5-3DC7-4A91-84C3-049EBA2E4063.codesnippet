@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setupUITableViewDelegate(Swift)</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension TwoTablevVewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -&gt; Int {
+            return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat {
+           return 80
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+        -&gt; UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "leftTableViewCell",for: indexPath) as! LeftTableViewCell
+            cell.titleLabel.text = leftTableData[indexPath.row]
+            return cell
+            
+       }
+   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -&gt; CGFloat {
+           return 30
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -&gt; UIView? {
+               
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 30))
+               headerView.backgroundColor = UIColor.white
+        return headerView
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FF3C85F5-3DC7-4A91-84C3-049EBA2E4063</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift-UITableViewDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

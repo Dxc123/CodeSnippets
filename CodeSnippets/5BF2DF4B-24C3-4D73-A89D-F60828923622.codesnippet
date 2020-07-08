@@ -3,32 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>lazyUIButton(Swift)</string>
+	<string>sharInstance(Swift)</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>private lazy var clickedButon: UIButton = {
-        let sn = UIButton(type: .custom)
-        sn.frame = CGRect.zero
-        sn.backgroundColor = UIColor.clear.withAlphaComponent(1)
-        sn.setTitle("妹子", for: .normal)
-        sn.setTitleColor(.gray, for: .normal)
-        sn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        sn.addTarget(self, action:#selector(searchAction(_:)), for: .touchUpInside)
-        return sn
-    }()
-//   @objc func searchAction(_ button: UIButton){
-//    }</string>
+	<string>//    单例
+class CJKTAlamofireManager  {
+    static let sharInstance = CJKTAlamofireManager()
+    private init() {}//防止外部通过init直接创建实例
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>8C4CF41E-BFA3-485F-8593-F7AA6AABBBB9</string>
+	<string>5BF2DF4B-24C3-4D73-A89D-F60828923622</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift-lazyUIButton</string>
+	<string>Swift单例</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

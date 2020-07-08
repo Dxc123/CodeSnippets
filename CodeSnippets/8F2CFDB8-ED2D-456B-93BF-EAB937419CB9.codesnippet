@@ -3,32 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>setupUITextField</string>
+	<string>lazyUITextField</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UITextField *questionTF = [[UITextField alloc] init];
-questionTF.font = [UIFont boldSystemFontOfSize:18];
-questionTF.textColor = [UIColor grayColor];
-questionTF.textAlignment = NSTextAlignmentCenter;
-questionTF.placeholder = @"喜欢什么颜色?";
-questionTF.borderStyle = UITextBorderStyleLine;
-questionTF.clearsOnBeginEditing = YES;
-questionTF.clearButtonMode = UITextFieldViewModeWhileEditing;
-questionTF.delegate = self;
-[self.view addSubview:questionTF];</string>
+	<string> lazy var phoneTF: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "输入手机号"
+        tf.textColor = UIColor.black
+        tf.textAlignment = .center
+        tf.font = UIFont.systemFont(ofSize: 15)
+        tf.borderStyle = .none
+        tf.clearButtonMode = .whileEditing
+        tf.backgroundColor = RGB(r: 245, 245, 245)
+        tf.layer.cornerRadius = 25
+        tf.layer.masksToBounds = true
+        return tf
+    }()</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B7696877-0A43-4F96-9133-38CDF38D3ACE</string>
+	<string>8F2CFDB8-ED2D-456B-93BF-EAB937419CB9</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetPlatformFamily</key>
 	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>创建UITextField</string>
+	<string>swift-lazyUITextField</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -12,7 +12,8 @@
 	<string>
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal////横向滚动
+        //layout.scrollDirection = .horizontal////横向滚动
+        //layout.sectionHeadersPinToVisibleBounds = true//分组头悬停
         let cw = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
         cw.backgroundColor = UIColor.white
         cw.delegate = self
@@ -24,11 +25,6 @@
         cw.register(cellType: CJKTSecondCollectionCell.self)
         cw.register(supplementaryViewType: CJKTSecondCollectionReusableView.self, ofKind: UICollectionView.elementKindSectionHeader)
         cw.register(supplementaryViewType: CJKTSecondCollectionReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
-        if #available(iOS 11.0, *) {
-            cw.contentInsetAdjustmentBehavior = .never
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = false
-        }
         return cw
         
     }()</string>
