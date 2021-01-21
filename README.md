@@ -1,4 +1,4 @@
-# MyXcodeCodeSnippets
+# CodeSnippets
 Xcode常用的代码块CodeSnippets
 iOS Xcode自定义代码块迁移:
 1. Command + Shift + G. 前往如下路径的文件夹
