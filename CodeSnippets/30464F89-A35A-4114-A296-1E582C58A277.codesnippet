@@ -10,7 +10,9 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>@interface &lt;#class name#&gt; ()
-
+@property (nonatomic, strong) UIImageView *avartV;
+@property (nonatomic, strong) UILabel *titleLab;
+@property (nonatomic, strong) UIButton *chooseBtn;
 @end</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>30464F89-A35A-4114-A296-1E582C58A277</string>
@@ -19,7 +21,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>@interface</string>
+	<string>创建头文件@interface</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

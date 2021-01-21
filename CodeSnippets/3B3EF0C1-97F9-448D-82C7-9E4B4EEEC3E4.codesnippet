@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setupUIGestureRecognizerDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark --  UIGestureRecognizerDelegate  解决手势冲突
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+//     判断当前点击的位置是否处于 某个view 内
+    CGPoint point = [gestureRecognizer locationInView:self.containerView];
+    BOOL value = CGRectContainsPoint(self.containerView.bounds, point);
+    return !value;
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+     AULog(@"手势点击 = %@", touch.view);
+
+//    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]
+//        ){
+//        return NO;
+//     }
+        if (touch.view == self.containerView){
+            return NO;
+        }
+    return YES;
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3B3EF0C1-97F9-448D-82C7-9E4B4EEEC3E4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>解决手势冲突</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setupUIGestureRecognizerDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

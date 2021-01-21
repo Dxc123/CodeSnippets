@@ -36,7 +36,7 @@
 //cell的个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return self.rechargeArr.count;
+    return 10;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     RechargeBtnCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RechargeBtnCell" forIndexPath:indexPath];
@@ -48,7 +48,7 @@
 //设置每个 Item 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(K_WIDTH/2-100, 70);
+    return CGSizeMake(kScreenWidth/2-100, 70);
 }
 //设置置collectionView的四周边距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -64,8 +64,7 @@
 }
 
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     RechargeBtnCell *cell = (RechargeBtnCell *)[collectionView cellForItemAtIndexPath:indexPath];
     [_delegate didSelectItemWith:indexPath.row];
     
@@ -77,12 +76,14 @@
     [_delegate didDeselectItemWith:indexPath.row];
 }
 
-//设置段尾的尺寸
+//设置段头的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeMake(K_WIDTH, 30);
+    return CGSizeMake(kScreenWidth, 30);
 }
+
+//设置段尾的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-    return CGSizeMake(K_WIDTH, 70);
+    return CGSizeMake(kScreenWidth, 70);
 }
 
 

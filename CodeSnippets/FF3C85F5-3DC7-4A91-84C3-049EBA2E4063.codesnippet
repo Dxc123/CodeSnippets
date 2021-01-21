@@ -31,12 +31,21 @@
        
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -&gt; CGFloat {
-           return 30
+           return 5
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -&gt; CGFloat {
+        return 5
+    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -&gt; UIView? {
-               
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 30))
-               headerView.backgroundColor = UIColor.white
-        return headerView
+           
+           let head = UIView.init()
+           head.backgroundColor = UIColor.clear
+           return head
+       }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -&gt; UIView? {
+            let footer = UIView.init()
+            footer.backgroundColor = UIColor.clear
+            return footer
     }
 }
 </string>
@@ -44,6 +53,8 @@
 	<string>FF3C85F5-3DC7-4A91-84C3-049EBA2E4063</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>

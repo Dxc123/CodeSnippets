@@ -19,8 +19,62 @@
     return self;
 }
 -(void)setupUI{
+    [self addSubview:self.avartV];
+    [self.avartV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(self.mas_leading).offset(10);
+        make.centerY.mas_equalTo(self.mas_centerY);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
+    [self addSubview:self.titleLab];
+    [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(self.mas_leading).offset(10);
+        make.centerY.mas_equalTo(self.mas_centerY);
+        make.width.mas_equalTo(300);
+        make.height.mas_equalTo(30);
+    }];
+    [self addSubview:self.chooseBtn];
+    [self.chooseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(self.mas_trailing).offset(-20);
+        make.centerY.mas_equalTo(self.mas_centerY);
+        make.width.mas_equalTo(20);
+        make.height.mas_equalTo(20);
+    }];
     
-}</string>
+}
+-(UIImageView *)avartV{
+    if (!_avartV) {
+        _avartV = [[UIImageView alloc] init];
+        _avartV.image = kIMAGE(@"");
+    }
+    return _avartV;
+}
+
+- (UILabel *)titleLab{
+    if (!_titleLab) {
+        _titleLab = [[UILabel alloc] init];
+        _titleLab.textAlignment = NSTextAlignmentCenter;
+        _titleLab.font = [UIFont boldSystemFontOfSize:16];
+        _titleLab.text = @"****";
+        _titleLab.textColor = [UIColor blackColor];
+        _titleLab.numberOfLines = 0;
+    }
+    return _titleLab;
+}
+-(UIButton *)chooseBtn{
+    if (!_chooseBtn) {
+        _chooseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_chooseBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_chooseBtn setTitle:@"点赞" forState:UIControlStateNormal];
+        [_chooseBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_chooseBtn addTarget:self action:@selector(chooseBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _chooseBtn;
+}
+-(void)chooseBtnClicked{
+    
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>D20981A6-853C-461A-92A2-88008B634F2E</string>
 	<key>IDECodeSnippetLanguage</key>

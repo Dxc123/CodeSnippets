@@ -3,25 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>setupSCREEN_WIDTH</string>
+	<string>dealloc</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+	<string>- (void)dealloc
+ {
+    NSLog(@"%s",__func__);
+}
 </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FB8AC080-A845-4443-A7BF-E2CF4B8D1307</string>
+	<string>A3D9F9B6-3C1D-441A-99AF-49F3CD9A00D7</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetSummary</key>
-	<string></string>
+	<string>对象销毁的方法</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高</string>
+	<string>dealloc</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

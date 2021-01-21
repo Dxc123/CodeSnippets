@@ -3,17 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>setupSCREEN_WIDTH</string>
+	<string>initTapGesture</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-</string>
+	<string>UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+        
+    }];
+[self.avartV addGestureRecognizer:tap];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FB8AC080-A845-4443-A7BF-E2CF4B8D1307</string>
+	<string>54F73AC6-5AF7-41FF-B490-5147C62A3CB3</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetPlatformFamily</key>
@@ -21,7 +22,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高</string>
+	<string>创建TapGesture</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,25 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>setupSCREEN_WIDTH</string>
+	<string>GCD-SerialQueue</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-</string>
+	<string>dispatch_queue_t serialQueue = dispatch_queue_create("com.lbp.download", DISPATCH_QUEUE_SERIAL);</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FB8AC080-A845-4443-A7BF-E2CF4B8D1307</string>
+	<string>FEDC91B5-80F6-4C66-AF76-67871903EE51</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetSummary</key>
-	<string></string>
+	<string>GCD串行队列</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高</string>
+	<string>serialQueue</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

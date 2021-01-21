@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setupUIWindowScene</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if (@available(iOS 13.0, *)) {
+       UIWindowScene *windowScene = [[UIWindowScene alloc] initWithSession:session connectionOptions:connectionOptions];
+       self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
+       self.window.frame = windowScene.coordinateSpace.bounds;
+       self.window.backgroundColor = [UIColor whiteColor];
+       self.window.rootViewController = [RACTabBarViewController new];
+       [self.window makeKeyAndVisible];
+    }
+    else {
+       self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+       self.window.backgroundColor = [UIColor whiteColor];
+       self.window.rootViewController = [RACTabBarViewController new];
+       [self.window makeKeyAndVisible];
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C03EAF17-7903-40E2-9B14-925BD34FFE39</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setupUIWindowScene</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

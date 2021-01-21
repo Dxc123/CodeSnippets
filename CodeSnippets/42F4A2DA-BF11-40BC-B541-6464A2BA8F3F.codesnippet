@@ -13,9 +13,65 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
+         [self setupCellUI];
+         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
+}
+ 
+-(void)setupCellUI{
+    [self.contentView addSubview:self.avartV];
+    [self.contentView addSubview:self.titleLab];
+    [self.contentView addSubview:self.chooseBtn];
+    [self.avartV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(self.contentView.mas_leading).offset(10);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+    }];
+    [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(self.contentView.mas_leading).offset(10);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.width.mas_equalTo(300);
+        make.height.mas_equalTo(30);
+    }];
+    [self.chooseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(self.contentView.mas_trailing).offset(-20);
+        make.centerY.mas_equalTo(self.contentView.mas_centerY);
+        make.width.mas_equalTo(20);
+        make.height.mas_equalTo(20);
+    }];
+    
+}
+- (UILabel *)titleLab{
+    if (!_titleLab) {
+        _titleLab = [[UILabel alloc] init];
+        _titleLab.textAlignment = NSTextAlignmentCenter;
+        _titleLab.font = [UIFont boldSystemFontOfSize:16];
+        _titleLab.text = @"学生";
+        _titleLab.textColor = [UIColor blackColor];
+        _titleLab.numberOfLines = 0;
+    }
+    return _titleLab;
+}
+-(UIButton *)chooseBtn{
+    if (!_chooseBtn) {
+        _chooseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_chooseBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_chooseBtn addTarget:self action:@selector(chooseBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _chooseBtn;
+}
+-(UIImageView *)avartV{
+    if (!_avartV) {
+        _avartV = [[UIImageView alloc] init];
+        _avartV.image = kIMAGE(@"");
+        _avartV.backgroundColor = [UIColor redColor];
+    }
+    return _avartV;
+}
+-(void)chooseBtnClicked{
+    
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>42F4A2DA-BF11-40BC-B541-6464A2BA8F3F</string>

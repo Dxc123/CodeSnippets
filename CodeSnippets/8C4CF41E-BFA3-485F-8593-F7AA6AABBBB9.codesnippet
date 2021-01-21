@@ -9,15 +9,15 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>private lazy var clickedButon: UIButton = {
-        let sn = UIButton(type: .custom)
-        sn.frame = CGRect.zero
-        sn.backgroundColor = UIColor.clear.withAlphaComponent(1)
-        sn.setTitle("妹子", for: .normal)
-        sn.setTitleColor(.gray, for: .normal)
-        sn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        sn.addTarget(self, action:#selector(searchAction(_:)), for: .touchUpInside)
-        return sn
+	<string>private lazy var clickedBtn: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.frame = CGRect.zero
+        btn.backgroundColor = UIColor.clear.withAlphaComponent(1)
+        btn.setTitle("妹子", for: .normal)
+        btn.setTitleColor(.gray, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        btn.addTarget(self, action:#selector(btnAction(_:)), for: .touchUpInside)
+        return btn
     }()
 //   @objc func searchAction(_ button: UIButton){
 //    }</string>
@@ -25,6 +25,8 @@
 	<string>8C4CF41E-BFA3-485F-8593-F7AA6AABBBB9</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>

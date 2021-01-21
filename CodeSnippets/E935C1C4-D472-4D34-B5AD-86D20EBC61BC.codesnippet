@@ -3,25 +3,57 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>setupSCREEN_WIDTH</string>
+	<string>lifecycleMethod</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+	<string>#pragma mark - life cycle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = &lt;#value#&gt;;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+}
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
 </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FB8AC080-A845-4443-A7BF-E2CF4B8D1307</string>
+	<string>E935C1C4-D472-4D34-B5AD-86D20EBC61BC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetPlatformFamily</key>
 	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
-	<string></string>
+	<string>生命周期函数组模版</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高</string>
+	<string>Life cycle Methods</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

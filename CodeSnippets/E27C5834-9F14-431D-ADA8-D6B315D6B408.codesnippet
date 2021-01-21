@@ -12,6 +12,7 @@
 	<string>
 #pragma mark – Life Cycle
 #pragma mark - Events Response（点击事件）
+#pragma mark - public Method
 #pragma mark – Private Methods（私有方法）
 #pragma mark – System Delegate（系统Delegate）
 #pragma mark - Custom Delegates（自定义Delegate）

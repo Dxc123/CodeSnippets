@@ -3,17 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>setupSCREEN_WIDTH</string>
+	<string>LazUIImageView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-</string>
+	<string>-(UIImageView *)avartV{
+    if (!_avartV) {
+        _avartV = [[UIImageView alloc] init];
+        _avartV.image = kIMAGE(@"");
+        _avartV.backgroundColor = [UIColor redColor];
+        _avartV.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _avartV;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FB8AC080-A845-4443-A7BF-E2CF4B8D1307</string>
+	<string>52F1CDA9-AC9A-4ED3-A751-B83FAF21DB01</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetPlatformFamily</key>
@@ -21,7 +27,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>屏幕宽高</string>
+	<string>懒加载UIImageView</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

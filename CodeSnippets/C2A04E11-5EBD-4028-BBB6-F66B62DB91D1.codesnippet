@@ -20,7 +20,14 @@
 
     open func configUI() {
         
-    }</string>
+    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        if selected {
+            
+        }else {
+            
+        }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>C2A04E11-5EBD-4028-BBB6-F66B62DB91D1</string>
 	<key>IDECodeSnippetLanguage</key>

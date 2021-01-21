@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>initshowAndHideCustomView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark --显示与隐藏
+-(void)au_showInView:(UIView *)view{
+    [view addSubview:self];
+    
+////    缩放显示（小-&gt;大）
+//       self.containerView.alpha = 0;
+//       self.containerView.transform = CGAffineTransformMakeScale(0, 0);
+//       [UIView animateWithDuration:0.25
+//          delay:0
+//       usingSpringWithDamping:1.0
+//       initialSpringVelocity:1
+//        options:UIViewAnimationOptionBeginFromCurrentState
+//       animations:^{
+//         self.containerView.alpha = 1.0f;
+//         self.containerView.transform = CGAffineTransformIdentity;
+//       } completion:^(BOOL finished) {
+//         self.containerView.transform = CGAffineTransformMakeScale(1, 1);
+//       }];
+
+    self.containerView.alpha = 0;
+    self.containerView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, 305);
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        self.alpha = 1;
+        self.containerView.alpha = 1;
+        self.containerView.frame = CGRectMake(0, kScreenHeight-305-kTabbarSafeBottomMargin, kScreenWidth, 305);;
+    } completion:^(BOOL finished) {
+//         self.containerView.frame = CGRectMake(0, kScreenHeight-305-kTabbarSafeBottomMargin, kScreenWidth, 305);
+        self.containerView.frame = CGRectMake(0, kScreenHeight-305-kTabbarSafeBottomMargin, kScreenWidth, 305);;
+    }];
+}
+-(void)au_hide{
+//   大-&gt;小——&gt;正常（缩放）
+//    self.containerView.transform = CGAffineTransformMakeScale(1, 1);
+//    [UIView animateWithDuration:0.25
+//            delay:0
+//          options:UIViewAnimationOptionBeginFromCurrentState
+//       animations:^{
+//
+//           self.containerView.alpha = 0.0;
+//           self.alpha = 0.0;
+//          self.containerView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+//       }
+//       completion:^(BOOL finished) {
+//           self.containerView.transform = CGAffineTransformMakeScale(0, 0);
+//       }];
+    
+//    向下消失
+        self.containerView.alpha = 1;
+        self.containerView.frame = CGRectMake(0, kScreenHeight-305-kTabbarSafeBottomMargin, kScreenWidth, 305);
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.containerView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, 305);
+        } completion:^(BOOL finished) {
+            self.containerView.alpha = 0;
+            self.alpha = 0;
+//           self.containerView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, 305);
+        }];
+
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AD4E5C75-E511-4562-AE5F-16959A0048CB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自定义 View显示与隐藏</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>自定义 View显示与隐藏</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -9,17 +9,21 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>lazy var nickNameLabel: UILabel = {
-    let nl = UILabel.init()
-    nl.textColor = UIColor.gray
-    nl.font = UIFont.systemFont(ofSize: 13)
-    nl.textAlignment = .center;
-    return nl
+	<string>lazy var titleLab: UILabel = {
+    let lab = UILabel.init()
+    lab.text = "UILabel"
+    lab.textColor = UIColor.gray
+    lab.font = UIFont.systemFont(ofSize: 16)
+    lab.textAlignment = .center
+    lab.numberOfLines = 0
+    return lab
     }()</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>49FA6C09-D2B2-4370-B461-3EBAAD5E65C6</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>

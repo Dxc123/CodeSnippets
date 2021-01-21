@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>initCustomAlertView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>+ (AURechargeDiamondView *)setupRechargeDiamondView{
+    return [[self alloc] initRechargeDiamondView];;
+}
+- (AURechargeDiamondView *)initRechargeDiamondView{
+    self = [super initWithFrame:[UIScreen mainScreen].bounds];
+    if (self) {
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHide)];
+              tap.delegate  = self;
+        [self addGestureRecognizer:tap];
+        [self setupUI];
+    }
+    return self;
+}
+-(void)tapHide{
+    [self au_hide];
+}
+
+-(void)setupUI{
+     // 承载容器的视图
+       UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, 305)];
+       containerView.userInteractionEnabled = YES;
+//       containerView.layer.cornerRadius = 5.0f;
+//       containerView.clipsToBounds = YES;
+       containerView.backgroundColor  = [UIColor blackColor];
+       [self addSubview:containerView];
+       self.containerView = containerView;
+
+      [containerView addSubview:self.tableView];
+      [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(self.mas_leading).offset(0);
+        make.trailing.mas_equalTo(self.mas_trailing).offset(0);
+        make.top.mas_equalTo(containerView.mas_top).offset(0);
+        make.height.mas_equalTo(305);
+      }];
+}
+
+
+#pragma mark --数据加载
+
+#pragma mark --显示与隐藏
+-(void)au_showInView:(UIView *)view{
+    [view addSubview:self];
+    
+    ////    缩放显示（小-&gt;大）
+    //       self.containerView.alpha = 0;
+    //       self.containerView.transform = CGAffineTransformMakeScale(0, 0);
+    //       [UIView animateWithDuration:0.25
+    //          delay:0
+    //       usingSpringWithDamping:1.0
+    //       initialSpringVelocity:1
+    //        options:UIViewAnimationOptionBeginFromCurrentState
+    //       animations:^{
+    //         self.containerView.alpha = 1.0f;
+    //         self.containerView.transform = CGAffineTransformIdentity;
+    //       } completion:^(BOOL finished) {
+    //         self.containerView.transform = CGAffineTransformMakeScale(1, 1);
+    //       }];
+    
+    self.containerView.alpha = 0;
+    self.containerView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, 305);
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        self.alpha = 1;
+        self.containerView.alpha = 1;
+        self.containerView.frame = CGRectMake(0, kScreenHeight-305-kTabbarSafeBottomMargin, kScreenWidth, 305);;
+    } completion:^(BOOL finished) {
+        //         self.containerView.frame = CGRectMake(0, kScreenHeight-305-kTabbarSafeBottomMargin, kScreenWidth, 305);
+        self.containerView.frame = CGRectMake(0, kScreenHeight-305-kTabbarSafeBottomMargin, kScreenWidth, 305);;
+    }];
+}
+-(void)au_hide{
+    //   大-&gt;小——&gt;正常（缩放）
+    //    self.containerView.transform = CGAffineTransformMakeScale(1, 1);
+    //    [UIView animateWithDuration:0.25
+    //            delay:0
+    //          options:UIViewAnimationOptionBeginFromCurrentState
+    //       animations:^{
+    //
+    //           self.containerView.alpha = 0.0;
+    //           self.alpha = 0.0;
+    //          self.containerView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    //       }
+    //       completion:^(BOOL finished) {
+    //           self.containerView.transform = CGAffineTransformMakeScale(0, 0);
+    //       }];
+    
+    //    向下消失
+    self.containerView.alpha = 1;
+    self.containerView.frame = CGRectMake(0, kScreenHeight-305-kTabbarSafeBottomMargin, kScreenWidth, 305);
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        self.containerView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, 305);
+    } completion:^(BOOL finished) {
+        self.containerView.alpha = 0;
+        self.alpha = 0;
+        //           self.containerView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, 305);
+    }];
+    
+    
+}
+
+
+#pragma mark --  UIGestureRecognizerDelegate  解决手势冲突
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    //     判断当前点击的位置是否处于 某个view 内
+    CGPoint point = [gestureRecognizer locationInView:self.containerView];
+    BOOL value = CGRectContainsPoint(self.containerView.bounds, point);
+    return !value;
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    AULog(@"手势点击 = %@", touch.view);
+    
+    //    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]
+    //        ){
+    //        return NO;
+    //     }
+    if (touch.view == self.containerView){
+        return NO;
+    }
+    return YES;
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>683714F4-A2DE-4DF8-9CF4-91AEA4851D2A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>自定义弹窗</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setupCustomAlertView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setUpTabBarChildViewControllers</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/***  添加所有子控制器*/
+-(void)setUpChildViewControllers{
+    QYHomeViewController *homeVC = [[QYHomeViewController alloc] init];
+    [self setUpOneChildViewController:homeVC image:[UIImage imageNamed:@"tab_home_nor"]  selectedImage:[UIImage imageNamed:@"tab_home_pre"]  title:@"Frist"];
+    QYSecondViewController *second = [[QYSecondViewController alloc] init];
+    [self setUpOneChildViewController:second image:[UIImage imageNamed:@"tab_found_nor"]  selectedImage:[UIImage imageNamed:@"tab_fond_pre"]  title:@"Second"];
+    QYThirdViewController *third = [[QYThirdViewController alloc] init];
+    [self setUpOneChildViewController:third image:[UIImage imageNamed:@"tab_mine_nor"]  selectedImage:[UIImage imageNamed:@"tab_mine_pre"]  title:@"Third"];
+    QYFourViewController *four = [[QYFourViewController alloc] init];
+    [self setUpOneChildViewController:four image:[UIImage imageNamed:@"tab_mine_nor"]  selectedImage:[UIImage imageNamed:@"tab_mine_pre"]  title:@"four"];
+}
+
+/**添加一个子控制器的方法*/
+- (void)setUpOneChildViewController:(UIViewController *)viewController image:(UIImage *)image selectedImage:(UIImage *)selectedImage  title:(NSString *)title{
+    QYNavigationViewController *BaseNav = [[QYNavigationViewController alloc] initWithRootViewController:viewController];
+    viewController.title = title;
+    //    viewController.tabBarItem.title=title;
+    //    tabBarItem 的选中和不选中文字属性
+    [viewController .tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor grayColor]} forState:UIControlStateNormal];
+    [viewController .tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:RGB(204, 62, 62)} forState:UIControlStateSelected];
+    //    tabBarItem 的选中和不选中图片属性
+    [viewController.tabBarItem setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [viewController.tabBarItem setSelectedImage:[selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [self addChildViewController:BaseNav];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>53886607-F900-499E-982E-47A84FC6A8A2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>setUpTabBarChildViewControllers</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
