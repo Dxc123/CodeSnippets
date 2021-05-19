@@ -9,12 +9,12 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>lazy var contentTextView: UITextView = {
-        let textView = UITextView()
-        textView.isUserInteractionEnabled = false
-        textView.font = UIFont.systemFont(ofSize: 13)
-        textView.textColor = UIColor.black
-        return textView
+	<string>lazy var textView: UITextView = {
+        let text = UITextView()
+        text.isUserInteractionEnabled = false
+        text.font = UIFont.systemFont(ofSize: 14)
+        text.textColor = UIColor.black
+        return text
     }()
     </string>
 	<key>IDECodeSnippetIdentifier</key>

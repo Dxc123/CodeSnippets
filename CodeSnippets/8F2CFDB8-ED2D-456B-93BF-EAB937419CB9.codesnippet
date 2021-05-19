@@ -17,7 +17,6 @@
         tf.font = UIFont.systemFont(ofSize: 15)
         tf.borderStyle = .none
         tf.clearButtonMode = .whileEditing
-        tf.backgroundColor = RGB(r: 245, 245, 245)
         tf.layer.cornerRadius = 25
         tf.layer.masksToBounds = true
         return tf

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>sharInstance(Swift)</string>
+	<string>shared(Swift)</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -13,6 +13,13 @@
 class CJKTAlamofireManager  {
     static let sharInstance = CJKTAlamofireManager()
     private init() {}//防止外部通过init直接创建实例
+/**
+     static let shared:LocalizationManger = {
+            let instance = LocalizationManger()
+            return instance
+          }()
+*/    
+    
 }
 </string>
 	<key>IDECodeSnippetIdentifier</key>
@@ -24,7 +31,7 @@ class CJKTAlamofireManager  {
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift单例</string>
+	<string>Swift-shared单例</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

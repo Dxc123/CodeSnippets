@@ -18,7 +18,7 @@
          _collectionView.dataSource = self;
         
          [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
-
+         //[_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([UNGIftCell class]) bundle:[NSBundle bundleForClass:[UNGIftCell class]]] forCellWithReuseIdentifier:@"UNGIftCell"];
          [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
 
          [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];

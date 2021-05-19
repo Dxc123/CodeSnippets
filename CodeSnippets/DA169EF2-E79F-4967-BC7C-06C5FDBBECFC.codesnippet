@@ -3,31 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>LazyUILabel</string>
+	<string>lazyTapGesture</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>lazy var titleLab: UILabel = {
-    let lab = UILabel.init()
-    lab.text = "****"
-    lab.textColor = UIColor.gray
-    lab.font = UIFont.systemFont(ofSize: 16)
-    lab.textAlignment = .center
-    lab.numberOfLines = 0
-    return lab
-    }()</string>
+	<string>
+ lazy var avatarTap: UITapGestureRecognizer = {
+     let tap = UITapGestureRecognizer(target: self, action: #selector(avatarTapAction(_:)))
+     return tap
+ }()
+@objc func avatarTapAction(_ tap: UIGestureRecognizer){
+
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>49FA6C09-D2B2-4370-B461-3EBAAD5E65C6</string>
+	<string>DA169EF2-E79F-4967-BC7C-06C5FDBBECFC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetPlatformFamily</key>
 	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
-	<string></string>
+	<string>lazyTapGesture</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift-LazyUILabel</string>
+	<string>Swift-lazyTapGesture</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

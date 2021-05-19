@@ -9,7 +9,10 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+	<string>class MyCenterCell: UITableViewCell {
+    var copyBlock:(()-&gt; Void)?
+    var tapBlock:((_ uid: String)-&gt; Void)?
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
        super.init(style: style, reuseIdentifier: reuseIdentifier)
        selectionStyle = .none
        configUI()
@@ -21,12 +24,19 @@
     open func configUI() {
         
     }
+    override func awakeFromNib() {
+           super.awakeFromNib()
+           // Initialization code
+       }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
         if selected {
             
         }else {
             
         }
+    }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>C2A04E11-5EBD-4028-BBB6-F66B62DB91D1</string>
@@ -37,7 +47,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift-initUITableViewCell</string>
+	<string>Swift-创建UITableViewCell</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

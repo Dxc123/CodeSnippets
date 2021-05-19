@@ -19,6 +19,10 @@
         [_button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;
+}
+
+-(void)buttonClicked:(UIButton *)sender{
+    
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>F27B382C-3729-4CE0-AAFA-78F51CA262CF</string>

@@ -12,8 +12,8 @@
 	<string>private lazy var clickedBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.frame = CGRect.zero
-        btn.backgroundColor = UIColor.clear.withAlphaComponent(1)
-        btn.setTitle("妹子", for: .normal)
+        btn.setImage(kIMG("login_facebook_icon"), for: .normal)
+        btn.setTitle("****", for: .normal)
         btn.setTitleColor(.gray, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         btn.addTarget(self, action:#selector(btnAction(_:)), for: .touchUpInside)

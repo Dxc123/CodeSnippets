@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>lazy  var  containerView: UIView = {
+	<string>lazy var containerView: UIView = {
         let view = UIView.init()
         view.backgroundColor = UIColor.white
         return view

@@ -12,10 +12,15 @@
 	<string>lazy var tableView: UITableView = {
     let tab = UITableView.init(frame: CGRect.zero, style: .plain)
     tab.backgroundColor = UIColor.white
+    tab.rowHeight = UITableView.automaticDimension
+    tab.estimatedRowHeight = 44
     tab.delegate = self
     tab.dataSource = self
     tab.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+    tab.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "UITableViewHeaderFooterView")
     tab.tableFooterView = UIView.init()
+    tab.showsVerticalScrollIndicator = false
+    tab.separatorStyle = .none
     return tab
     
 }()</string>
@@ -28,7 +33,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift-lazyTableview</string>
+	<string>Swift-lazyUITableview</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
