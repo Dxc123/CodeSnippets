@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>setupTableView</string>
+	<string>setupUITableView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -15,10 +15,11 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+        [_tableView registerNib:[UINib nibWithNibName:@"UNTableViewCell" bundle:nil] forHeaderFooterViewReuseIdentifier:@"UNTableViewCell"];
         [_tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"UITableViewHeaderFooterView"];
         _tableView.tableFooterView = [UIView new];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        
+        _tableView.backgroundColor = [UIColor whiteColor];
     }
     return _tableView;
 }
