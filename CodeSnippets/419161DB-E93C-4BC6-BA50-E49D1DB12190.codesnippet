@@ -17,6 +17,7 @@
     tab.delegate = self
     tab.dataSource = self
     tab.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+    tab.register(UINib.init(nibName: "UITableViewCell2", bundle: nil), forCellReuseIdentifier: "UITableViewCell2")
     tab.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "UITableViewHeaderFooterView")
     tab.tableFooterView = UIView.init()
     tab.showsVerticalScrollIndicator = false
