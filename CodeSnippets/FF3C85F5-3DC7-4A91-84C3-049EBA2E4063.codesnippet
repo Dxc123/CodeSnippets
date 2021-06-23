@@ -21,8 +21,7 @@
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         -&gt; UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "leftTableViewCell",for: indexPath) as! LeftTableViewCell
-            cell.titleLabel.text = leftTableData[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",for: indexPath) //as! LeftTableViewCell
             return cell
             
        }
@@ -31,10 +30,10 @@
        
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -&gt; CGFloat {
-           return 5
+        return 0.1
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -&gt; CGFloat {
-        return 5
+        return 0.1
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -&gt; UIView? {
            
